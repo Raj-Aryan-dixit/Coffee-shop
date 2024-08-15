@@ -1,0 +1,240 @@
+/* Reset some default styles */
+body, h1, p, ul, a {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #fff;
+    background-color: #000;
+}
+
+/* Navbar styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    background-color: #D4AF37;
+    position: fixed;
+    top: 15px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 90%;
+    max-width: 1200px;
+    z-index: 1000;
+    border-radius: 10px;
+}
+
+.navbar .nav-links {
+    display: flex;
+    gap: 10px;
+}
+
+.navbar .nav-links li {
+    display: inline; /* Ensure each link is displayed inline */
+}
+
+.navbar .nav-links a {
+    color: rgb(14, 13, 13);
+    font-size: 16px;
+    padding: 8px 15px; /* Adjust padding for better spacing */
+    border-radius: 5px;
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.navbar .nav-links a:hover {
+    background-color: #302d2d; /* Change background color on hover */
+    color: #D4AF37; /* Change text color on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow effect */
+    transform: translateY(-2px); /* Slight upward movement on hover */
+}
+
+.navbar .icons {
+    display: flex;
+    gap: 15px;
+}
+
+.navbar .icons a {
+    color: white;
+    font-size: 18px;
+    transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+.navbar .icons a:hover {
+    color: #c5942e; /* Change icon color on hover */
+}
+
+/* Main section with background image and dark overlay */
+.main-section {
+    position: relative; /* Create a stacking context */
+    height: 100vh;
+    width: 100%;
+    background: url('coffee.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 7px; /* Adjust for fixed navbar */
+}
+
+.main-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+    z-index: 1; /* Ensure the overlay is on top of the background */
+}
+
+.main-section .content {
+    position: relative; /* Position content above the overlay */
+    z-index: 2;
+}
+
+.main-section .content h1 {
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.main-section .content p {
+    font-size: 18px;
+    margin: 30px 95px;
+    max-width: 600px;
+}
+
+.main-section .btn {
+  appearance: none;
+  background-color: #D4AF37; /* Set initial background color to white */
+  border:none; /* Set initial border color to white */
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #1A1A1A; /* Set text color to dark to contrast with the white background */
+  cursor: pointer;
+  display: inline-block;
+  font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0;
+  min-height: 60px;
+  min-width: 0;
+  outline: none;
+  padding: 16px 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 200px;
+  will-change: transform;
+   box-shadow: 0 10px 10px rgba(235, 229, 229, 0.273);
+
+}
+
+.main-section .btn:hover {
+   color: #fff;
+  background-color: #1A1A1A;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+.main-section .btn:disabled {
+  pointer-events: none;
+}
+
+.main-section .btn:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+.logo img {
+    height: 50px;
+    width: 50px;
+}
+
+/* Image Gallery Section */
+.image-gallery {
+    padding: 50px 30px;
+    text-align: center;
+    background-color: #222;
+}
+
+.image-gallery h2 {
+    color: #D4AF37;
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.image-gallery .gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.image-gallery .gallery-item {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
+}
+
+.image-gallery .gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
+}
+
+.image-gallery .gallery-item:hover {
+    transform: scale(1.1); /* Scale up the entire gallery-item, including the image and overlay */
+}
+
+.image-gallery .gallery-item:hover img {
+    transform: scale(1.2); /* Further scale up the image slightly more than the container */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Overlay text styling */
+.image-gallery .gallery-item .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    opacity: 0; /* Start hidden */
+    transition: opacity 0.8s ease; /* Smooth transition */
+}
+
+.image-gallery .gallery-item:hover .overlay {
+    opacity: 1; /* Show the overlay text on hover */
+}
+
+
+
+/* Footer styling */
+.footer {
+    background-color: #111;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    bottom: 0;
+    width:100%;
+}
